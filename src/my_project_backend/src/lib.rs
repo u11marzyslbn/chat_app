@@ -18,7 +18,3 @@ fn get_chat() -> Vec<String> {
 fn greet(name: String) -> String {
     format!("Hello, {}!", name)
 }
-
-// fn moja_nowa_funkcja() {
-//     print!("Hello, World!");
-// }
