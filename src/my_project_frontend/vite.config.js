@@ -18,6 +18,23 @@ export default defineConfig({
     },
   },
   server: {
+    fs: {
+      strict: true,
+      allow: [
+        // Allow files from the project root
+        '.',
+        // Allow access to declarations (for IC canisters)
+        '../declarations',
+        // Allow node_modules
+        './node_modules'
+      ],
+      deny: [
+        // Deny access to sensitive files
+        '.env*',
+        '**/.git/**',
+        '**/node_modules/.cache/**'
+      ]
+    },
     proxy: {
       '/api': {
         target: 'http://127.0.0.1:4943',
